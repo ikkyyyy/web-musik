@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Musik 0_0</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/controls/OrbitControls.js"></script>
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <div class="logo">Web Musik</div>
+        <div><img src="images/musik2.jpg" alt="Artist 1"></div>
+        <nav>
+            <ul>
+                <li><a href="premium.html">Premium</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li class="divider">|</li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="artist-carousel">
+            <div><img src="images/adele.jpg" alt="Artist 1"></div>
+            <div><img src="images/brunomars.jpg" alt="Artist 2"></div>
+            <div><img src="images/agnesmonica.jpg" alt="Artist 3"></div>
+            <div><img src="images/alecbenjamin.jpg" alt="Artist 4"></div>
+            <div><img src="images/brunomars2.jpg" alt="Artist 5"></div>
+        </div>
+        <h1>Listening is everything</h1>
+        <p>Millions of songs and podcasts. No credit card needed.</p>
+       
+    </section>
+
+    <main>
+        <section class="features">
+            <div class="feature">
+                <a href="download_music.html"><img src="musik.jpg" alt="Feature 1" id="download-music-img"></a>
+                <h2>Search Music</h2>
+                <p>Enjoy your favorite songs offline.</p>
+            </div>
+            <div class="feature">
+                <a href="playlist.html"><img src="playlist.jpg" alt="Feature 2" id="create-playlist-img"></a>
+                <h2>Playlists</h2>
+                <p>Build the perfect collection for every mood.</p>
+            </div>
+            <div class="feature">
+                <a href="listen_podcast.html"><img src="podcast.jpg" alt="Feature 3" id="listen-podcast-img"></a>
+                <h2>Listen to Podcasts</h2>
+                <p>Discover new stories and ideas.</p>
+            </div>
+        </section>
+
+        <section class="music-player">
+            <div class="player">
+                <div class="track-info">
+                    <img src="albummusik.jpg" alt="Album Art">
+                    <div class="track-details">
+                        <span class="track-name">aku ingin dia kembali</span>
+                        <span class="artist-name">Artist: ikiw</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="prev">&#9664;&#9664;</button>
+                    <button id="play">&#9654;</button>
+                    <button id="next">&#9654;&#9654;</button>
+                </div>
+                <div class="volume">
+                    <label for="volume-control">Volume:</label>
+                    <input type="range" id="volume-control" min="0" max="100" value="50">
+                </div>
+            </div>
+            <audio id="audio-player" src="path/to/your/song.mp3"></audio>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Communities</h4>
+                <ul>
+                    <li><a href="#">For Artists</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Vendors</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Web Player</a></li>
+                    <li><a href="#">Free Mobile App</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spotify ikiw gans</p>
+        </div>
+    </footer>
+
+    <div id="sign-up-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-sign-up">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="sign-up-form">
+                <label for="sign-up-email">Email:</label>
+                <input type="email" id="sign-up-email" required>
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="sign-up-password" required>
+                <label for="sign-up-confirm-password">Confirm Password:</label>
+                <input type="password" id="sign-up-confirm-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-login">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="age-form" style="display: none;">
+                <label for="age">Please enter your age:</label>
+                <input type="number" id="age" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="notification-modal" class="modal">
+        <div class="modal-content notification-content">
+            <span class="close-notification" id="close-notification">&times;</span>
+            <div class="checkmark-circle">
+                <div class="background"></div>
+                <div class="checkmark draw"></div>
+            </div>
+            <p id="notification-message"></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="play.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.artist-carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 1000, // Increase the speed of autoplay
+                dots: true,
+                arrows: false
+            });
+
+            // JavaScript untuk menampilkan modals dan notifikasi berhasil
+            document.addEventListener('DOMContentLoaded', function() {
+                const signUpModal = document.getElementById('sign-up-modal');
+                const loginModal = document.getElementById('login-modal');
+                const notificationModal = document.getElementById('notification-modal');
+                const signUpBtn = document.getElementById('sign-up-btn');
+                const loginBtn = document.getElementById('login-btn');
+                const closeSignUp = document.getElementById('close-sign-up');
+                const closeLogin = document.getElementById('close-login');
+                const closeNotification = document.getElementById('close-notification');
+                const signUpForm = document.getElementById('sign-up-form');
+                const loginForm = document.getElementById('login-form');
+                const ageForm = document.getElementById('age-form');
+                const notificationMessage = document.getElementById('notification-message');
+
+                signUpBtn.addEventListener('click', function() {
+                    signUpModal.style.display = 'block';
+                });
+
+                loginBtn.addEventListener('click', function() {
+                    loginModal.style.display = 'block';
+                });
+
+                closeSignUp.addEventListener('click', function() {
+                    signUpModal.style.display = 'none';
+                });
+
+                closeLogin.addEventListener('click', function() {
+                    loginModal.style.display = 'none';
+                });
+
+                closeNotification.addEventListener('click', function() {
+                    notificationModal.style.display = 'none';
+                });
+
+                signUpForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    showNotification('Sign up successful!');
+                    signUpModal.style.display = 'none';
+                    signUpForm.reset();
+                });
+
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    showAgeForm();
+                    loginModal.style.display = 'none';
+                    loginForm.reset();
+                });
+
+                ageForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    let ageValue = document.getElementById('age').value;
+                    if (ageValue.trim() === '') {
+                        alert('Silakan masukkan umur Anda.');
+                        return;
+                    }
+                    showNotification(`Umur ${ageValue} berhasil disubmit!`);
+
+                });
+
+                function showNotification(message) {
+                    notificationMessage.textContent = message;
+                    notificationModal.style.display = 'block';
+                    setTimeout(function() {
+                        notificationModal.style.display = 'none';
+                    }, 3000); // Hide after 3 seconds
+                }
+
+                function showAgeForm() {
+                    ageForm.style.display = 'block';
+                }
+            });
+        });
+
+       // app.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('three-js-canvas');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas });
+    
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.position.z = 5;
+
+    // Add a sphere to the scene
+    const geometry = new THREE.SphereGeometry(1, 32, 32);
+    const material = new THREE.MeshBasicMaterial({ color: 0x0077ff, wireframe: true });
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+    // Add some lights
+    const ambientLight = new THREE.AmbientLight(0x404040);
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
+
+    // Add controls
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
+    controls.enableZoom = true;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        sphere.rotation.x += 0.01;
+        sphere.rotation.y += 0.01;
+        controls.update();
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Resize handler
+    window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+});
+
+    </script>
+    
+</body>
+</html>

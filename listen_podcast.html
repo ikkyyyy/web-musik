@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen to Podcasts - Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #000000;
+    }
+
+    header .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        margin: 0 15px;
+        position: relative;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #b3b3b3;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #1db954;
+    }
+
+    nav .divider {
+        color: #ffffff;
+    }
+
+    nav a::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #1db954;
+        transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+        width: 100%;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .listen-podcast {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .listen-podcast h1 {
+        font-size: 36px;
+    }
+
+    .listen-podcast p {
+        font-size: 18px;
+        margin: 20px 0;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        background-color: #1db954;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 18px;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #1ed760;
+    }
+
+    .podcast {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .podcast-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 10px;
+    }
+
+    .podcast-controls {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .play-btn {
+        background-color: #1db954;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .play-btn:hover {
+        background-color: #1ed760;
+    }
+
+    .menu {
+        position: relative;
+    }
+
+    .menu-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .menu-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: #333;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-content a {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu-content a:hover {
+        background-color: #444;
+    }
+
+    .menu-content.show {
+        display: block;
+    }
+
+    .coming-soon-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 36px;
+        font-weight: bold;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    .home-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #1db954;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 18px;
+        transition: background-color 0.3s;
+    }
+
+    .home-btn:hover {
+        background-color: #1ed760;
+    }
+
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 30px;
+    }
+
+    .footer-links div {
+        max-width: 200px;
+    }
+
+    .footer-links h4 {
+        margin-top: 0;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+</style>
+<body>
+    <header>
+        <div class="logo">Spotify kiwz</div>
+        <nav>
+            <ul>
+                <li><a href="index2.html">Home</a></li>
+                <!-- Add other navigation items here -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="listen-podcast">
+            <h1>Listen to Podcasts</h1>
+            <p>Discover new stories and ideas with Spotify's diverse range of podcasts.</p>
+            <a href="#" class="btn">Explore Podcasts on Spotify</a>
+        </section>
+
+        <section class="podcast">
+            <img src="images/nmspodcast.jpg" alt="" class="podcast-image">
+            <p>Camping di Gunung Daerah Jawa Barat</p>
+            <div class="podcast-controls">
+                <button class="play-btn">▶️</button>
+                <div class="menu">
+                    <button class="menu-btn">⋮</button>
+                    <div class="menu-content">
+                        <a href="playlist.html">Add to Playlist</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Communities</h4>
+                <ul>
+                    <li><a href="#">For Artists</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Vendors</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Web Player</a></li>
+                    <li><a href="#">Free Mobile App</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Spotify ikiw gans</p>
+        </div>
+    </footer>
+
+    <div class="coming-soon-overlay">
+        Coming Soon....
+        <a href="index.html" class="home-btn">Home</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.menu-btn');
+            const menuContent = document.querySelector('.menu-content');
+
+            menuBtn.addEventListener('click', function() {
+                menuContent.classList.toggle('show');
+            });
+        });
+    </script>
+</body>
+</html>

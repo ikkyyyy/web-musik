@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Music - MusikKu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1DB954, #191414);
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #191414;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1DB954;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #1DB954;
+        }
+
+        main {
+            padding: 100px 20px 20px;
+            text-align: center;
+        }
+
+        .search-music {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-music h1 {
+            color: #1DB954;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        form label {
+            font-size: 18px;
+        }
+
+        form input {
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+
+        .add-to-playlist {
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-playlist:hover {
+            background-color: #1ed760;
+        }
+
+        footer {
+            background-color: #191414;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .footer-links div {
+            margin: 10px 0;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 5px 0;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MusikKu</div>
+        <nav>
+            <ul>
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-music">
+            <h1>Search Music</h1>
+            <form id="search-form">
+                <label for="search-input">Search:</label>
+                <input type="text" id="search-input" placeholder="Enter song name...">
+            </form>
+            <div id="search-results">
+                <!-- Placeholder for search results -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">For the Record</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Communities</h4>
+                <ul>
+                    <li><a href="#">For Artists</a></li>
+                    <li><a href="#">Developers</a></li>
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">Investors</a></li>
+                    <li><a href="#">Vendors</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Web Player</a></li>
+                    <li><a href="#">Free Mobile App</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MusikKu</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            
+
+            const songs = [
+                { name: 'Rapuh - Agnes Monica', file: 'musik/Agnes Monica - Rapuh ( Official Lyric Video ).mp3', cover: 'images/agnesmonica.jpg' },
+                { name: 'Let me down slowly - Alec Benjamin', file: 'musik/Alec Benjamin - Let Me Down Slowly (Lyrics).mp3', cover: 'images/alecbenjamin.jpg' },
+                { name: 'Too Good to Say Goodbye - Bruno Mars', file: 'musik/Too Good to Say Goodbye.mp3', cover: 'images/brunomars.jpg' },
+                { name: 'Million Years Ago - Adele', file: 'musik/Million Years Ago.mp3', cover: 'images/adele.jpg' },
+                { name: 'Versace on the floor - Bruno Mars', file: 'musik/Versace on the Floor (Single).mp3', cover: 'images/brunomars2.jpg' },
+                { name: 'That Somebody - Rafi Sudirman', file: 'musik/Rafi Sudirman - That Somebody (lyrics).mp3', cover: 'images/rafisudirman.jpg' },
+                { name: 'Mendua - Astrid', file: 'musik/Astrid - Mendua (Lirik).mp3', cover: 'images/astrid.jpg' },
+                { name: 'Just Give Me a Reason - P!nk', file: 'musik/P!nk - Just Give Me a Reason (Lyrics).mp3', cover: 'images/p!nk.jpg' },
+                { name: 'Bawa Dia Kembali - Mahalini', file: 'musik/Mahalini - Bawa Dia kembali (Video Lirik).mp3', cover: 'images/mahalini.jpg' },
+                { name: 'Masih Hatiku - Arsy Widianto Tiara Andini', file: 'musik/Arsy Widianto Tiara Andini - Masih Hatiku (Official Music Video).mp3', cover: 'images/arsywidianto&tiaraandini.jpg' },
+                { name: 'One Only - Pamungkas', file: 'musik/Pamungkas - One Only (Lyrics Video).mp3', cover: 'images/pamungkas.jpg' },
+                { name: 'Apalah Arti Menunggu - Raisa', file: 'musik/Apalah Arti Menunggu - Raisa (Lirik).mp3', cover: 'images/raisa.jpg' },
+                { name: 'Rayu - Marion Jola', file: 'musik/Marion Jola - Rayu (Official Lyric Video).mp3', cover: 'images/marionjola.jpg' },
+                { name: 'Indah - Agnes Monica', file: 'musik/Agnes Monica - Indah (Agnez Mo) Lirik Lagu Indonesia.mp3', cover: 'images/agnesindah.jpg' },
+                { name: 'Menjaga Hati - Yovie & Nuno', file: 'musik/Yovie & Nuno - Menjaga Hati (Lirik Lagu).mp3', cover: 'images/yovie&nuno.jpg' },
+                { name: 'On Bended Knee - Boyz II Men', file: 'musik/Boyz II Men - On Bended Knee.mp3', cover: 'images/Boyz2Men.jpg' },
+                { name: 'pelangi - HIVI!', file: 'musik/HIVI! - Pelangi (Official Lyric Video).mp3', cover: 'images/hivi.jpg' },
+                { name: 'Remaja - HIVI!', file: 'musik/HIVI! - Remaja (Official Lyric Video).mp3', cover: 'images/hivi.jpg' },
+                { name: 'Siapkah Kau Tuk Jatuh Cinta Lagi - HIVI!', file: 'musik/HIVI! - Siapkah Kau Tuk Jatuh Cinta Lagi (Official Lyric Video).mp3', cover: 'images/hivi.jpg' },
+                { name: 'Mata Ke Hati - HIVI!', file: 'musik/HIVI! - Mata Ke Hati (Official Music Video).mp3', cover: 'images/hivi.jpg' },
+                { name: 'Rindu - Agnes Monica', file: 'musik/Agnes Monica - Rindu (Agnez Mo) Lirik Lagu Indonesia.mp3', cover: 'images/agnesrindu.jpg' },
+                { name: 'Cinta Mati - Agnes Monica', file: 'musik/Agnes Monica feat Ahmad Dhani - Cinta Mati - Lirik Nostalgia.mp3', cover: 'images/agnescintamati.jpg' },
+                { name: 'Salah - Potret', file: 'musik/Potret - Salah (Lirik).mp3', cover: 'images/salahpotret.jpg' },
+                { name: 'it will rain - Bruno Mars', file: 'musik/bruno mars - it will rain (lyrics).mp3', cover: 'images/itwillrainBrunoMars.jpg' },
+                { name: 'Locked out of Heaven- Bruno Mars', file: 'musik/Bruno Mars - Locked Out Of Heaven.mp3', cover: 'images/brunomarsiwashyourman.jpg' },
+                { name: 'Talking to the Moon - Bruno Mars', file: 'musik/Bruno Mars - Talking To The Moon (Official Lyric Video).mp3', cover: 'images/brunomarsTalkingtothemoon.jpg' },
+                { name: 'Thats What I Like - Bruno Mars', file: 'musik/Bruno Mars - Thats What I Like [Official Music Video].mp3', cover: 'images/brunomars.jpg' },
+                { name: 'When I Was Your Man - Bruno Mars', file: 'musik/Bruno Mars - When I Was Your Man.mp3', cover: 'images/brunomarsiwashyourman.jpg' },
+                { name: 'Put On A Smile - Bruno Mars Anderson .Paak Silk Sonic', file: 'musik/Bruno Mars Anderson .Paak Silk Sonic - Put On A Smile [Official Audio].mp3', cover: 'images/brunomarsSmile.jpg' },
+                { name: 'The Lazy Song - Bruno Mars', file: 'musik/Bruno Mars - The Lazy Song (Lyrics).mp3', cover: 'images/brunomars.jpg' },
+                { name: 'Just The Way You Are - Bruno Mars', file: 'musik/Bruno Mars - Just The Way You Are (Lyrics).mp3', cover: 'images/brunomars.jpg' },
+                { name: '24K Magic - Bruno Mars', file: 'musik/Bruno Mars - 24K Magic (Official Music Video).mp3', cover: 'images/brunomars.jpg' },
+                { name: 'Billionaire -Travie McCoy ft. Bruno Mars', file: 'musik/Billionaire - Travie McCoy ft. Bruno Mars [Lyrics Vietsub].mp3', cover: 'images/billionaireBrunomars.jpg' },
+                { name: 'Kill Bill - SZA', file: 'musik/@sza - Kill Bill (Lyrics).mp3', cover: 'images/killbill.jpg' },
+                { name: 'Andaikan Kau Datang - Andmesh', file: 'musik/Andmesh - Andaikan Kau Datang I Ost Miracle In Cell No.7 08 September 2022 di Bioskop.mp3', cover: 'images/andmesh.jpg' },
+                { name: 'Jangan Pernah Berubah - Syifa Hadju', file: 'musik/SYIFA HADJU “JANGAN PERNAH BERUBAH“.mp3', cover: 'images/syifahadju.jpg' },
+                { name: 'Rindu Dalam Hati - Arsy WidiantoBrisia Jodie', file: 'musik/Arsy Widianto Brisia Jodie - Rindu Dalam Hati (Lirik).mp3', cover: 'images/arsywidiantoBrisiaJodie.jpg' },
+                { name: 'Nobody Gets Me - SZA', file: 'musik/SZA - Nobody Gets Me (Lyrics).mp3', cover: 'images/killbill.jpg' },
+                { name: 'Not You - Alan Walker', file: 'musik/Alan Walker & Emma Steinbakken - Not You (Lyrics).mp3', cover: 'images/alanwalker.jpg' },
+                { name: 'Tetap Dalam Jiwa - Isyana Sarasvati', file: 'musik/Isyana Sarasvati - Tetap Dalam Jiwa Lirik Lagu Indonesia.mp3', cover: 'images/isyana.jpg' },
+                { name: 'Favorit Girl - Justin Bieber', file: 'musik/Justin Bieber - Favorite Girl (Lyrics).mp3', cover: 'images/justinbeiber.jpg' },
+                { name: 'Rahasia Hati - Element', file: 'musik/Element - Rahasia Hati Lirik Lagu.mp3', cover: 'images/rahasiahati.jpg' },
+                { name: 'That Should Be Me  - Justin Bieber', file: 'musik/THAT SHOULD BE ME - JUSTIN BIEBER (LYRICS).mp3', cover: 'images/justinbieber.jpg' },
+                { name: 'Dia Masa Lalumu,Aku Masa Depanmu - Vionita', file: 'musik/DIA MASA LALUMU AKU MASA DEPANMU - Vionita (Lirik).mp3', cover: 'images/vionitamasalalu.jpg' },
+                { name: 'Drunk Text - Henry Moodie', file: 'musik/Henry Moodie - drunk text (Lyrics).mp3', cover: 'images/drunktext.jpg' },
+                { name: 'Play Date - Melanie Martinez', file: 'musik/Melanie Martinez - Play Date (Lyrics).mp3', cover: 'images/playdate.jpg' },
+                { name: 'One Of The Girl - The Weeknd,JENNIE,Lily-Rose Depp', file: 'musik/The Weeknd JENNIE Lily-Rose Depp - One Of The Girls (Lyrics).mp3', cover: 'images/oneofthegirl.jpg' },
+                { name: 'Rapsodi - JKT48', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/jkt48.jpg' },
+                { name: 'Tak Segampang Itu - Anggi Marito', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/taksegampangitu.jpg' },
+                { name: 'Menjadi Dia - Tiara Andini', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/tiaraandini.jpg' },
+                { name: 'Surat Cinta Untuk Starla - Virgoun', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/virgoun.jpg' },
+                { name: 'Merasa Indah - Tiara Andini', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/tiaraandini.jpg' },
+                { name: 'Melawan Restu - Mahalini', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/mahalinimlawanrestu.jpg' },
+                { name: 'Hilang Tanpa Bilang - Meiska', file: 'musik/JKT48 - Rapsodi (Lirik).mp3', cover: 'images/meiskahilangtanpabilang.jpg' },
+                { name: 'lily - Alan Walker - Lily ft. K-391 & Emelie Hollow', file: 'musik/Alan Walker - Lily ft. K-391 & Emelie Hollow (Official Lyric Video).mp3', cover: 'images/alanwalkerlily.jpg' },
+                { name: 'On My Way - Alan Walker Sabrina Carpenter & Farruko', file: 'musik/Alan Walker Sabrina Carpenter & Farruko - On My Way.mp3', cover: 'images/alanwalkeronmywayjpg.jpg' },
+                { name: 'Darkside - Alan Walker', file: 'musik/Alan Walker - Darkside (Lyrics) ft. Au Ra and Tomine Harket.mp3', cover: 'images/alanwalkerdarkside.jpg' },
+                { name: 'Faded - Alan Walker', file: 'musik/Alan Walker - Faded.mp3', cover: 'images/alanwalkerfaded.jpg' },
+                { name: 'Who I Am - Alan Walker Putri Ariani Peder Elias', file: 'musik/Alan Walker Putri Ariani Peder Elias - Who I Am (Official Music Video).mp3', cover: 'images/alanwalkerwhoiam.jpg' },
+                { name: 'The Drum - Alan Walker', file: 'musik/Alan Walker - The Drum (Lyrics).mp3', cover: 'images/alanwalkerthedrum.jpg' },
+                { name: 'Alone - Alan Walker', file: 'musik/Alan Walker - Alone (Lyrics).mp3', cover: 'images/alanwalkeralone.jpg' },
+                
+
+            ];
+
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                searchResults.innerHTML = '';
+
+                if (searchTerm === '') return;
+
+                const filteredSongs = songs.filter(song => song.name.toLowerCase().startsWith(searchTerm));
+
+                filteredSongs.forEach(song => {
+                    const songElement = document.createElement('div');
+                    songElement.classList.add('song');
+                    songElement.innerHTML = `
+                        <p>${song.name}</p>
+                        <button class="add-to-playlist">Add to Playlist</button>
+                    `;
+
+                    const addToPlaylistBtn = songElement.querySelector('.add-to-playlist');
+                    addToPlaylistBtn.addEventListener('click', function() {
+                        addToPlaylist(song.name, song.file, song.cover);
+                    });
+
+                    searchResults.appendChild(songElement);
+                });
+            });
+
+            function addToPlaylist(songName, songUrl, songCover) {
+                const playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+
+                if (!playlist.find(song => song.name === songName)) {
+                    playlist.push({ name: songName, file: songUrl, cover: songCover });
+                    localStorage.setItem('playlist', JSON.stringify(playlist));
+                    alert('Song added to playlist!');
+                } else {
+                    alert('This song is already in your playlist.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

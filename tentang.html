@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index2.html">Home</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="download_music.html">Search</a></li>
+                <li><a href="tentang.html" class="active">Tentang</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="about">
+        <div class="container">
+            <h1>Tentang Kami</h1>
+            <p>Selamat datang di Web Musik Offline kami! Kami hadir untuk memberikan pengalaman mendengarkan musik tanpa batas, kapan saja, di mana saja, tanpa perlu koneksi internet. Berikut adalah beberapa keunggulan menggunakan layanan kami:</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-headphones-alt"></i>
+                    <h2>Offline Listening</h2>
+                    <p>Anda dapat mendownload lagu favorit dan mendengarkannya kapan saja tanpa harus terhubung ke internet.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-music"></i>
+                    <h2>Koleksi Lengkap</h2>
+                    <p>Kami memiliki jutaan lagu dari berbagai genre dan artis yang dapat Anda nikmati secara offline.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-play-circle"></i>
+                    <h2>User-Friendly</h2>
+                    <p>Antarmuka yang sederhana dan mudah digunakan, membuat pengalaman mendengarkan musik Anda semakin nyaman.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h2>Update Berkala</h2>
+                    <p>Kami selalu memperbarui koleksi musik kami dengan lagu-lagu terbaru untuk memenuhi kebutuhan musik Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Web Musik Offline. All Rights Reserved.</p>
+    </footer>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradien background */
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a.active, nav ul li a:hover {
+            background-color: #ff6347;
+            border-radius: 5px;
+        }
+
+        .about {
+            padding: 6rem 0 2rem;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin: 1rem;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item i {
+            font-size: 3rem;
+            color: #ff6347;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #555;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</body>
+</html>
